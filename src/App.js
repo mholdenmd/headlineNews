@@ -30,20 +30,31 @@ function App() {
       console.error(err)
     })
   
-
+  }
   
 
 
   return (
     <div className="App">
       <button onClick = {getNews} >Get some news </button>
-      {topHeadlines.map((newsArticle,idx) =>{
-        return <h1>{newsArticle.title}</h1>
+      {topHeadlines.map((newsArticle,idx) =>{ //this allows me to 
+        return <div class="card">
+        
+        <div class="card-body">
+          <h4 class="card-title">{newsArticle.title}</h4>
+          <p class="card-text">
+            {newsArticle.description}
+          </p>
+          <a href={newsArticle.url} class="btn btn-primary btn-lg">Go to news articles</a>
+        </div>
+      </div>
+      
+        
       })}
       
     </div>
   );
-}
+
 }
 export default App;
 
